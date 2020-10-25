@@ -18,7 +18,7 @@ def seconds_timer(end_time):
     print('{0} seconds have elapsed by process id : {1}' .format(end_time, proc))
 
 if __name__ == '__main__':
-    end_time_list = [5, 5, 5] #3개니까 3번 반복
+    end_time_list = [5, 5, 5] 
     procs = []
     startTime = int(time.time())
     for end_time in end_time_list:
@@ -27,8 +27,7 @@ if __name__ == '__main__':
         proc.start()
 
     for proc in procs:
-        proc.join() #proc이 끝나기 전까지 main의 프로세스를 끝나지 않게 함.
-                   #multiprocess쓸 때 join 중요
+        proc.join() 
     endTime = int(time.time())
-    print('작업 시간 = 약 {0}s' .format(endTime - startTime))
+    print('Working Time = about {0}s' .format(endTime - startTime))
 
